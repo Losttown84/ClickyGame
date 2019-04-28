@@ -36,3 +36,27 @@ class App extends Component {
     }
   }
 }
+
+render() {
+  return (
+    <div>
+      <Nav 
+        score={this.state.score}
+      />
+      <jumbotron />
+      <div className="wrapper">
+        {this.state.player.map(player => (
+          <PlayerCard
+            imageClick={this.imageClick}
+            id={player.id}
+            key={player.id}
+            image={player.image}
+          />
+        ))}
+      </div>
+      <footer />
+    </div>
+  );
+}
+}
+export default App;
